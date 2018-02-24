@@ -1804,6 +1804,10 @@ ignore@^3.2.7, ignore@^3.3.3:
   version "3.3.7"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.3.7.tgz#612289bfb3c220e186a58118618d5be8c1bab021"
 
+import-sort-style-absolute@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/import-sort-style-absolute/-/import-sort-style-absolute-1.0.1.tgz#44243183edc3f8eead63727e3d2ca5bf235816fe"
+
 imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
