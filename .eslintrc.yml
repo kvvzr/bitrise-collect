@@ -1,0 +1,7 @@
+parser: babel-eslint
+extends:
+  - airbnb-base
+plugins:
+  - googleappsscript
+env:
+  googleappsscript/googleappsscript: true

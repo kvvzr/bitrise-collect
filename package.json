@@ -1,0 +1,35 @@
+{
+  "name": "bitrise-report",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.18.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-googleappsscript": "^1.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
+    "prettier-eslint-cli": "^4.7.1",
+    "rollup": "^0.56.2",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-copy": "^0.2.3",
+    "rollup-plugin-gas": "^1.0.0",
+    "rollup-plugin-node-resolve": "^3.0.3"
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "deploy": "rollup -c && clasp push"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier-eslint --write",
+      "eslint",
+      "git add"
+    ]
+  }
+}
