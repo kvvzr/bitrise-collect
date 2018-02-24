@@ -1,5 +1,5 @@
 {
-  "name": "bitrise-report",
+  "name": "bitrise-collect",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",

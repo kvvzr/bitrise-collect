@@ -1,4 +1,4 @@
-# bitrise-report
+# bitrise-collect
 
 ![](https://i.gyazo.com/cb2df16c6a0ea9442bf1f5f715ffa951.png)
 
