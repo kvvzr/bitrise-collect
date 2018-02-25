@@ -106,6 +106,18 @@ const getYestadayValue = () =>
 
 const unique = arr => arr.filter((x, i, self) => self.indexOf(x) === i);
 
+const postToSlack = (text) => {
+  const payload = JSON.stringify({ text });
+  const options = {
+    method: 'post',
+    contentType: 'application/json',
+    payload,
+  };
+  if (config.SLACK_WEBHOOK_URL) {
+    UrlFetchApp.fetch(config.SLACK_WEBHOOK_URL, options);
+  }
+};
+
 const writeToBuildAvgSheet = (sheet, statistics) => {
   const headerApps = fillHeader(sheet, statistics.map(app => app.name));
 
@@ -157,6 +169,12 @@ const writeToHoldAvgSheet = (sheet, statistics) => {
     }
     sheet.getRange(targetRow, targetColumn + 2).setValue(value.avg);
   });
+
+  // TODO: localization
+  const summary = values
+    .map(value => `${value.type}: ${Math.floor(value.avg * 24 * 60 * 10) / 10}分`)
+    .join('、');
+  postToSlack(`昨日のだいたいのホールド時間は、 ${summary} でした`);
 };
 
 global.updateReport = () => {
