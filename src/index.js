@@ -174,7 +174,7 @@ const writeToHoldAvgSheet = (sheet, statistics) => {
   const summary = values
     .map(value => `${value.type}: ${Math.floor(value.avg * 24 * 60 * 10) / 10}分`)
     .join('、');
-  postToSlack(`昨日のだいたいのホールド時間は、 ${summary} でした`);
+  postToSlack(`昨日のだいたいのホールド時間は、 ${summary} でした\n${config.SPREADSHEET_URL}`);
 };
 
 global.updateReport = () => {
