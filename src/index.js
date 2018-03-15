@@ -106,7 +106,7 @@ const getYestadayValue = () =>
 
 const unique = arr => arr.filter((x, i, self) => self.indexOf(x) === i);
 
-const postToSlack = (text) => {
+/* const postToSlack = (text) => {
   const payload = JSON.stringify({ text });
   const options = {
     method: 'post',
@@ -116,7 +116,7 @@ const postToSlack = (text) => {
   if (config.SLACK_WEBHOOK_URL) {
     UrlFetchApp.fetch(config.SLACK_WEBHOOK_URL, options);
   }
-};
+}; */
 
 const writeToBuildAvgSheet = (sheet, statistics) => {
   const headerApps = fillHeader(sheet, statistics.map(app => app.name));
@@ -171,10 +171,10 @@ const writeToHoldAvgSheet = (sheet, statistics) => {
   });
 
   // TODO: localization
-  const summary = values
+  /* const summary = values
     .map(value => `${value.type}: ${Math.floor(value.avg * 24 * 60 * 10) / 10}分`)
     .join('、');
-  postToSlack(`昨日のだいたいのホールド時間は、 ${summary} でした\n${config.SPREADSHEET_URL}`);
+  postToSlack(`昨日のだいたいのホールド時間は、 ${summary} でした\n${config.SPREADSHEET_URL}`); */
 };
 
 global.updateReport = () => {
